@@ -30,19 +30,18 @@ public class PostService {
     public List<Object[]> getAllPosts(){
         return postRepository.getAllPosts();
     }
-    public List<Object[]> caug(String s){
+    public Set<Post> caug(String s){
         String[] keyword=s.split(" ");
-        List<Object[]> list=new ArrayList<>();
+        Set<Post> list=new HashSet<>();
         for(String s1:keyword){
             list.addAll(postRepository.caug(s1));
         }
         return list;
     }
-    public Set<Object[]> cauh(String s){
+    public Set<Post> cauh(String s){
         String[] keyword=s.split(" ");
-        Set<Object[]> list=new HashSet<>();
+        Set<Post> list=new HashSet<>();
         for(String s1:keyword){
-            Set<Object[]> set=new HashSet<>();
             list.addAll(postRepository.cauh(s1));
         }
         return list;
