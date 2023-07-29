@@ -17,7 +17,7 @@ public interface PostRepository extends JpaRepository<Post,Integer> {
     @Query("select  p.id, p.title,p.author.name,p.songName,p.genre.name, p.date  from Post p")
     List<Object[]> getAllPosts();
     @Query("select p from Post p where p.songName like %:keyword%")
-    List<Post> caug(String keyword);
+    Set<Post> caug(String keyword);
     @Query("select p from Post p where p.songName like %:keyword% or p.title like %:keyword%")
     Set<Post> cauh(String keyword);
 }
