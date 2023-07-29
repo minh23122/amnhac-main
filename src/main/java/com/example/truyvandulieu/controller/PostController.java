@@ -36,13 +36,13 @@ public class PostController {
     public  List<Object[]> getAllPosts(){
         return postService.getAllPosts();
     }
-//    http://localhost:8080/api/posts/song/yeu%20thuong%20anh%20em
+//    http://localhost:8080/api/post/gs/song/yeu%20thuong%20anh%20em
     @GetMapping("/song/g/{keyword}")
-    public List<Object[]> getPosthaveSongkeys(@PathVariable String keyword){
+    public Set<Post> getPosthaveSongkeys(@PathVariable String keyword){
         return postService.caug(keyword);
     }
     @GetMapping("/song/h/{keyword}")
-    public Set<Object[]> getPosthaveSongOrTitlekeys(@PathVariable String keyword){
+    public Set<Post> getPosthaveSongOrTitlekeys(@PathVariable String keyword){
         return postService.cauh(keyword);
     }
 }
